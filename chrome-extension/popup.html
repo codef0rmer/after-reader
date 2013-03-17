@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="after-reader" ng-csp>
+    <head>
+      <script src="js/angular.min.js"></script>
+      <script src="js/popup.js"></script>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <style>
+        body {
+          width: 300px;
+          padding: 30px;
+        }
+      </style>
+    </head>
+    <body ng-controller="MainCtrl">
+      <div class="btn btn-inverse" style='margin-bottom:5px;' ng-click="addNewReader()" ng-hide='addnew'>Add New Reader</div>
+      <div class="btn btn-inverse" style='margin-bottom:5px;' ng-click="saveNewReader()" ng-show='addnew' ng-disabled="!readerName || !readerUrl">Save New Reader</div>
+
+      <form class="form-horizontal" ng-show='addnew'>
+        <div class="input-prepend input-append">
+          <span class="add-on">Name</span>
+          <input class="span3" type="text" id="readerName" ng-model="readerName" placeholder="Reader Name">
+        </div>
+        <div class="input-prepend input-append" style="margin-top:5px;">
+          <span class="add-on" style='width:36px;'>Url</span>
+          <input class="span3" type="text" ng-model='readerUrl' placeholder="Reader URL">
+        </div>
+      </form>
+      <!-- <div class="alert alert-info pull-left">
+        Set the default Feed Reader below:
+      </div> -->
+      <button class="btn btn-large btn-block" ng-repeat="feed in feeds" ng-click="setDefault($index)" ng-class="{true:'btn-primary'}[feed.chosen]">{{feed.name}}</button>
+    </body>
+</html>
