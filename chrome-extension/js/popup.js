@@ -9,7 +9,9 @@ App.controller('MainCtrl', ['$scope', '$timeout', 'Store', function($scope, $tim
     {name: 'GetPrismatic.com', url: 'http://getprismatic.com/news/home', chosen: false},
     {name: 'TheOldReader.com', url: 'http://theoldreader.com/', chosen: false},
     {name: 'Newsblur.com', url: 'http://www.newsblur.com/', chosen: false},
-    {name: 'Pulse.me', url: 'https://www.pulse.me/', chosen: false}
+    {name: 'Pulse.me', url: 'https://www.pulse.me/', chosen: false},
+    {name: 'Digg Reader', url: 'http://digg.com/reader', chosen: false},
+    {name: 'AOL Reader', url: 'http://reader.aol.com/', chosen: false}
   ];
   $scope.totalSample = $scope.feeds.length - 1;
 

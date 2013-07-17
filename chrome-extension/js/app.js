@@ -14,6 +14,8 @@ function loadReader(name, url) {
 // sends a request to background.js
 chrome.extension.sendRequest({method: "loadReader"}, function(response) {
   if (response.defaultReader !== null) {
-    loadReader(response.defaultReader, response.defaultUrl);
+    window.setTimeout(function() {
+     loadReader(response.defaultReader, response.defaultUrl);      
+    }, 2000);
   }
 });
